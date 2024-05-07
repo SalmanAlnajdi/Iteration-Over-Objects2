@@ -187,9 +187,10 @@ const students = [
   
   function removeCourseFromStudent(student, course) {
     // Your code here
-    let studentIndex = students.indexOf(student);
-    let cIndex = students[studentIndex].courses.indexOf(course)
-    students[studentIndex].courses.splice(cIndex,1)
+    student.courses = student.courses.filter((co)=> co !== course)
+    // let studentIndex = students.indexOf(student);
+    // let cIndex = students[studentIndex].courses.indexOf(course)
+    // students[studentIndex].courses.splice(cIndex,1)
     return student
   
   }
