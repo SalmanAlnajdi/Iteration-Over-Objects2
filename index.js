@@ -151,20 +151,28 @@ const students = [
     **********/
   function listAllCourses(students) {
     // Your code here
-    let index = students.length
-    let coursesArr = [];
 
-    console.log();
-    for(let i = index-1; i >= 0 ;i--){
-        let courseIndex = students[i].courses.length
-         for(let y = courseIndex-1; y >= 0 ;y--){
-            if(!(coursesArr.includes(students[i].courses[y]))){
-                coursesArr.push(students[i].courses[y])
-            }
+    const coursesArr = [];
+    const addToList = students.forEach(student => {
+      student.courses.filter((co)=>{
+        if(!(coursesArr.includes(co))){
+        coursesArr.push(co)
+      }} )
+    });
+
+    // let index = students.length
+    // console.log(index);
+    //((student)=> student.courses !== students.courses)
+    // for(let i = index-1; i >= 0 ;i--){
+    //     let courseIndex = students[i].courses.length
+    //      for(let y = courseIndex-1; y >= 0 ;y--){
+    //         if(!(coursesArr.includes(students[i].courses[y]))){
+    //             coursesArr.push(students[i].courses[y])
+    //         }
            
-         }
+    //      }
         
-    }
+    // }
   
     return coursesArr
     // console.log(coursesArr);
